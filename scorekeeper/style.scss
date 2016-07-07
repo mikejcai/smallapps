@@ -1,4 +1,4 @@
-$themeColor : lightseagreen;
+$themeColor : teal;
 $themeFont: 'Secular One', serif;
 
 * {
@@ -45,7 +45,7 @@ h1 {
 		margin: 0;
 		line-height: 250px;
 		font-size: 500%;
-		color: invert($themeColor);
+		color: white;
 	}
 
 }
@@ -77,14 +77,15 @@ h1 {
 	border: 1px solid $themeColor;
 	text-align: center;
 	font-size: 90%;
+	font-family: $themeFont;
 }
 
 #reset {
-	background-color: darken(complement($themeColor), 10%);
+	background-color: lighten(complement($themeColor), 10%);
 	border: 1px solid complement($themeColor);
 	&:hover,
 	&:active {
-		background-color: darken(complement($themeColor), 20%);
+		background-color: darken(complement($themeColor), 10%);
 	}
 }
 
