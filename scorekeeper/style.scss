@@ -1,6 +1,8 @@
 $themeColor : teal;
 $themeFont: 'Secular One', serif;
 
+@import 'mixins';
+
 * {
 	box-sizing: border-box;
 }
@@ -22,12 +24,21 @@ body {
 .container {
 	width: 80%;
 	margin: 0 auto;
+	@include bp-phone {
+		width: 95%;
+	}
+	@include bp-tablet {
+		width: 90%;
+	}
 }
 
 h1 {
 	text-align: center;
 	font-size: 250%;
 	line-height: 1.5em;
+	@include bp-phone {
+		font-size: 200%;
+	}
 }
 
 .inner-container {
