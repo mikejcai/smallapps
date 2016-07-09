@@ -129,8 +129,8 @@ main {
   border-radius: 10px; }
 
 .color-display {
-  width: calc((80vw - 80px) / 3);
-  height: calc((80vw - 80px) / 3);
+  width: calc((80vw - 180px) / 3);
+  height: calc((80vw - 180px) / 3);
   display: inline-block;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -141,12 +141,12 @@ main {
   cursor: pointer; }
   @media only screen and (min-width: 1250px) {
     .color-display {
-      width: 306px;
-      height: 306px; } }
+      width: 295px;
+      height: 295px; } }
   @media only screen and (max-width: 480px) {
     .color-display {
-      width: 100px;
-      height: 100px;
+      width: 80px;
+      height: 80px;
       margin: 5px; } }
 
 /*# sourceMappingURL=style.css.map */
