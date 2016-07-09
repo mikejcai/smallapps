@@ -1,5 +1,5 @@
 ;(function(){
-	// Pure JavaScript game for RGB Color Guessing 
+	// Pure JavaScript app for RGB Color Guessing Game
 
 	// Initialize and default settings:
 	var difficulty; 	// storing difficulty levels, could be easy or hard
