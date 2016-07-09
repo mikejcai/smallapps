@@ -47,7 +47,6 @@
 
 	// Initialize the colors
 	function init() {
-		// set difficulty
 
 		// reset colorSet
 		colorSet = [];
@@ -130,7 +129,9 @@
 
 	// packing necessary functions for new game initialization
 	function constructColorGame(setDifficulty) {
+		// set difficulty
 		difficulty = setDifficulty;
+		// initialize variables and create color divs
 		init();
 		setColor();
 		setClickEvent();
