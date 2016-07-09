@@ -129,24 +129,18 @@ main {
   border-radius: 10px; }
 
 .color-display {
-  width: calc((80vw - 200px) / 3);
-  height: calc((80vw - 200px) / 3);
+  width: 30%;
+  padding-bottom: 30%;
+  margin: 1.66%;
   display: inline-block;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  border-radius: 5px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
   background: black;
-  margin-right: 20px;
-  cursor: pointer; }
-  @media only screen and (min-width: 1250px) {
-    .color-display {
-      width: 268px;
-      height: 268px; } }
-  @media only screen and (max-width: 480px) {
-    .color-display {
-      width: 80px;
-      height: 80px;
-      margin: 5px; } }
+  cursor: pointer;
+  float: left; }
+  .color-display:nth-child(3n) {
+    margin-right: -1.66%; }
 
 /*# sourceMappingURL=style.css.map */
