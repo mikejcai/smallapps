@@ -111,6 +111,7 @@
 
 					} else {
 						// if guessed wrong
+						// use fading out effect
 						var s = document.querySelectorAll(".color-display")[j].style;
 						s.opacity = 1;
 						(function fade(){(s.opacity-=.1)<0?s.display="none":setTimeout(fade,40)})();

@@ -5,8 +5,8 @@ $body-font: 'Source Sans Pro', sans-serif;
 $headerColor: teal;
 $siteTitleColor: white;
 $rgbColor: darken($headerColor, 15%);
-$colordivwidth: calc((80vw - 180px) / 3);
-$colordivwidth-desktop: 295px;
+$colordivwidth: calc((80vw - 200px) / 3);
+$colordivwidth-desktop: 268px;
 
 body {
 	font-family: $body-font;

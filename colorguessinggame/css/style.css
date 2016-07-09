@@ -129,8 +129,8 @@ main {
   border-radius: 10px; }
 
 .color-display {
-  width: calc((80vw - 180px) / 3);
-  height: calc((80vw - 180px) / 3);
+  width: calc((80vw - 200px) / 3);
+  height: calc((80vw - 200px) / 3);
   display: inline-block;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -141,8 +141,8 @@ main {
   cursor: pointer; }
   @media only screen and (min-width: 1250px) {
     .color-display {
-      width: 295px;
-      height: 295px; } }
+      width: 268px;
+      height: 268px; } }
   @media only screen and (max-width: 480px) {
     .color-display {
       width: 80px;
