@@ -1,0 +1,161 @@
+@import 'mixins';
+@import 'mylib';
+
+$body-font: 'Source Sans Pro', sans-serif;
+$headerColor: teal;
+$siteTitleColor: white;
+$rgbColor: darken($headerColor, 15%);
+$colordivwidth: calc((80vw - 80px) / 3);
+$colordivwidth-desktop: 306px;
+
+body {
+	font-family: $body-font;
+}
+
+.container {
+	width: 100%;
+}
+
+.header-wrapper {
+	width: 100%;
+	background: $headerColor;
+}
+
+header, 
+.content-wrapper {
+	width: 80%;
+	height: auto;
+	max-width: 1000px;
+	margin: 0 auto;
+	padding: 10px 10px 0 10px;
+	@include bp-phone {
+		width: 100%;
+	}
+}
+
+h1, 
+h2 {
+	margin: 0;
+	padding: 10px;
+	text-align: center;
+}
+
+h1 {
+	font-size: 300%;
+	color: $siteTitleColor;
+	@include bp-phone {
+		font-size: 250%;
+	}
+}
+
+h2 {
+	font-size: 280%;
+	color: $rgbColor;
+	@include bp-phone {
+		font-size: 200%;
+	}
+}
+
+nav ul {
+	padding: 0;
+	margin: 0;
+}
+
+nav ul li {
+	list-style: none;
+	float: left;
+	// padding-right: 30px;
+	padding: 0px;
+	display: inline-block;
+	height: auto;
+	line-height: 50px;
+	vertical-align: middle;
+	text-align: center;
+	cursor: pointer;
+
+	&:first-child {
+		width: 25%;
+		color: darken($headerColor, 20%);
+		font-weight: bolder;
+		&:hover,
+		&:active {
+			background: darken($headerColor, 10%);
+			color: white;
+		}	
+	}
+
+	&:nth-child(2) {
+		width: 50%;
+		cursor: default;
+		font-size: 130%;
+		font-style: italic;
+		font-family: 'Lato', sans-serif;
+		color: complement($headerColor);
+	}
+
+	&:last-child {
+		width: 25%;
+		padding-right: 0;
+		// text-align: right;
+		color: darken(dimgrey, 20%);
+		span {
+			display: inline-block;
+			height: 50px;
+			width: 50px;
+			line-height: 50px;
+			text-align: center;
+			a {
+				text-decoration: none;
+				&:link,
+				&:visited {
+					color: white;
+				}
+			}
+			&:hover,
+			&:active {
+				background: darken($headerColor, 10%);
+				color: white;
+			}
+		}
+
+	}
+	@include bp-phone {
+		&:nth-child(n) {
+			width: 100%;
+		}
+	}
+}
+
+main {
+	text-align: center;
+	margin-top: 20px;
+	width: 100%;
+	padding: 0;
+
+}
+
+
+.box { @include border-radius(10px); }
+
+.color-display {
+	width: $colordivwidth;
+	height: $colordivwidth;
+	display: inline-block;
+	@include border-radius(5px);
+	background: rgba(0, 0, 0, 1);
+	margin-right: 20px;
+	cursor: pointer;
+	// margin-top: 20px;
+	// &:nth-child(3n) {
+	// 	margin-right: -20px;
+	// }
+	@include bp-desktop {
+		width: $colordivwidth-desktop;
+		height: $colordivwidth-desktop;
+	}
+	@include bp-phone {
+		width: 100px;
+		height: 100px;
+		margin: 5px;
+	}
+}
