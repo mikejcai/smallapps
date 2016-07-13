@@ -24,7 +24,7 @@ h1 {
 	text-transform: uppercase;
 	font-weight: normal;
 	@include bp-phone {
-		font-size: 100%;
+		font-size: 100%; 
 	}
 }
 

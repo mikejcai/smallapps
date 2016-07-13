@@ -24,6 +24,9 @@ h1 {
   font-size: 130%;
   text-transform: uppercase;
   font-weight: normal; }
+  @media only screen and (max-width: 480px) {
+    h1 {
+      font-size: 100%; } }
 
 ul {
   list-style: none;
@@ -72,6 +75,10 @@ li:hover span {
   margin: 100px auto;
   background: #f7f7f7;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.1); }
+  @media only screen and (max-width: 480px) {
+    #container {
+      width: 95%;
+      margin: 0 auto; } }
 
 .done {
   text-decoration: line-through;
