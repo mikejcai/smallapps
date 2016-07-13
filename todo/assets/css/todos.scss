@@ -23,6 +23,9 @@ h1 {
 	font-size: 130%;
 	text-transform: uppercase;
 	font-weight: normal;
+	@include bp-phone {
+		font-size: 100%;
+	}
 }
 
 ul {
@@ -80,6 +83,10 @@ li:hover span {
 	margin: 100px auto;
 	background: #f7f7f7;
 	box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+	@include bp-phone {
+		width: 95%;
+		margin: 0 auto;
+	}
 }
 
 .done {
