@@ -7,7 +7,8 @@ $themeColor: #2980b9;
 }
 
 body {
-	font-family: Roboto;
+	font-family: Redressed;
+	font-size: 18px;
 	// use gradient from uigradients.com
 	background: #E6DADA; /* fallback for old browsers */
 	background: -webkit-linear-gradient(to left, #E6DADA , #274046); /* Chrome 10-25, Safari 5.1-6 */
@@ -31,6 +32,7 @@ ul {
 }
 
 li {
+	cursor: pointer;
 	height: 40px;
 	line-height: 40px;
 	color: #666;
@@ -47,6 +49,7 @@ input[type="text"] {
 	padding: 13px 13px 13px 20px;
 	color: $themeColor;
 	border: 3px solid rgba(0,0,0,0);
+	font-family: Redressed;
 	&:focus {
 		background: white;
 		border: 3px solid $themeColor;
@@ -73,7 +76,7 @@ li:hover span {
 
 
 #container {
-	width: 360px;
+	width: 400px;
 	margin: 100px auto;
 	background: #f7f7f7;
 	box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
