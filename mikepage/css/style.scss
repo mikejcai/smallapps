@@ -1,0 +1,30 @@
+$errorColor: #a94442;
+$sansFont: "Source Sans Pro", sans-serif;
+
+
+body {
+	background: gainsboro;
+	font-family: $sansFont;
+	font-weight: lighter;
+	font-size: 16px;
+}
+
+input, textarea, select, label {
+	font-family: inherit;
+	font-weight: lighter;
+}
+
+input.ng-invalid.ng-dirty {
+	border-color: $errorColor;
+	background: lighten($errorColor, 30%);
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+}
+
+ng-cloak {
+	display: none;
+}
+
+.form2 {
+	margin-top: 40px;
+}
