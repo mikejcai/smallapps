@@ -17,39 +17,39 @@
 			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
 			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 		<![endif]-->
-		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
 	</head>
 	<body ng-controller="mainCtrl">
 		<div class="container">
 			<h1 class="text-center">Resistance is Futile</h1>
 
-			<form ng-submit="query()">
+			<form name="form1" ng-submit="query()" novalidate>
 				<legend>Form 1</legend>
 			
 				<div class="row">
 					<div class="form-group col-sm-6">
-						<label for="">Input 1* (required)</label>
-						<input type="text" class="form-control" id="input1" name="name1" placeholder="Input field 1" ng-model="input1">
+						<label for="">Song Name (required)</label>
+						<input type="text" class="form-control" id="input1" name="song_name" placeholder="song name" ng-model="song_name" required>
 					</div>
 				
 
 					<div class="form-group col-sm-6">
-						<label for="">Input 2</label>
-						<input type="text" class="form-control" id="input2" name="name2" placeholder="Input field 2" ng-model="input2">
+						<label for="">Artist Name</label>
+						<input type="text" class="form-control" id="input2" name="artist_name" placeholder="artist name" ng-model="artist_name">
 					</div>
 				</div><!-- /.row -->
 				
 			
-				<button type="submit" class="btn btn-primary">Submit</button>
+				<button type="submit" class="btn btn-primary" ng-disabled="form1.$invalid">Submit</button>
 			</form>
 			
 			<form ng-show="showForm2" class="form2" ng-cloak>
 				<legend>Form 2</legend>
 
-				<div class="radio" ng-repeat="item in data1" ng-cloak>
+				<div class="radio" ng-repeat="item in data1 track by $index" ng-cloak>
 					<label>
 						<input name="form2input" type="radio" value="{{item.id}}" ng-model="form2value" ng-change="query2(form2value)" />
-						{{item.string}}
+						{{item.content}}
 					</label>
 				</div>
 			</form>
@@ -59,7 +59,7 @@
 			<hr />
 			<h2>Query Results: </h2>
 				<ul class="list-group">
-					<li class="list-group-item" ng-repeat="row in results">{{row.string}}</li>
+					<li class="list-group-item" ng-repeat="row in results track by $index">{{row.string}}</li>
 				</ul>
 			</div><!-- /.col-xs-12 results -->
 		</div><!-- /.container -->

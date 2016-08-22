@@ -4,51 +4,45 @@ $.noConflict();
 
 angular.module('app', [])
 .controller('mainCtrl', ['$scope', '$http', function($scope, $http){
-	$scope.input1 = null;
-	$scope.input2 = null;
+	$scope.song_name = null;
+	$scope.artist_name = null;
 	$scope.showForm2 = false;
 	$scope.showResults = false;
-	$scope.data1 = [{
-			"id": 1,
-			"string": "Mike"
-		},
-		{
-			"id": 2,
-			"string": "Rachel"
-		},
-		{
-			"id": 3,
-			"string": "Pinchy"
-		}
-	];
-	$scope.data2 = [
-		[
-			{"string": "hedgehogs and wizards."},
-			{"string": "Alice in Wonderland and magic wands."},
-			{"string": "parrots, modern art, and knitting."},
-		],
-		[
-			{"string": "dogs and fossils."},
-			{"string": "vampires and pigeons."},
-			{"string": "monster movies, jump-rope, extravagant period clothes, and checkers."},
-		],
-		[
-			{"string": "skiing, romance movies, and ferrets."},
-			{"string": "sandcastles, the Wizard of Oz, and flower-arranging."},
-			{"string": "Medieval art and scarves."},
-		]
-	];
+	$scope.data1 = [];
+	$scope.data2 = [];
 
 
 	$scope.query = function() {
-		$scope.showForm2 = true;
 		
-	};
+		// display form 2 view
+		$scope.showForm2 = true; 
 
+		// query url for form 1
+		var url1 = 'http://192.168.1.141:8080/greeting?song_name=' + $scope.song_name + '&artist_name=' + $scope.artist_name;
+
+		// ajax request
+		$http.get(url1)
+			.then(function(result) {
+				$scope.data1 = result.data;
+				
+			}, function(error){
+				console.log("Failed to load data1: " + error);
+			});
+	};
+	
 	$scope.query2 = function(value) {
-		var index = value - 1;
-		$scope.showResults = true;
-		$scope.results = $scope.data2[index];
+		$scope.showResults = true; // show query result view
+
+		var url2 = '';  // the query url for form 2
+
+		// ajax request
+		$http.get(url2)
+			.then(function(result) {
+				$scope.data2 = result.data;
+			}, function(error) {
+				console.log('Failed to load data2: ' + error);
+			});
+
 	};
 
 }]);
