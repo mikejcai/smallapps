@@ -22,9 +22,9 @@
 	<body ng-controller="mainCtrl">
 		<div class="container">
 			<h1 class="text-center">Resistance is Futile</h1>
-
+			
 			<form name="form1" ng-submit="query()" novalidate>
-				<legend>Form 1</legend>
+				<legend>Reference Song Search</legend>
 			
 				<div class="row">
 					<div class="form-group col-sm-6">
@@ -43,23 +43,50 @@
 				<button type="submit" class="btn btn-primary" ng-disabled="form1.$invalid">Submit</button>
 			</form>
 			
-			<form ng-show="showForm2" class="form2" ng-cloak>
-				<legend>Form 2</legend>
+			<img src="tumblr_mgnte3bpTc1qh1g19o1_400.gif" alt="wormhole" ng-show="showWormhole" ng-cloak>
+			<form ng-show="showForm2" class="form2" ng-submit="query2()" ng-cloak>
+				<legend>Matching Songs</legend>
 
-				<div class="radio" ng-repeat="item in data1 track by $index" ng-cloak>
+				<div class="radio" ng-repeat="item in songMatches track by $index" ng-cloak>
 					<label>
-						<input name="form2input" type="radio" value="{{item.id}}" ng-model="form2value" ng-change="query2(form2value)" />
-						{{item.content}}
+						<input name="form2input" type="radio" ng-model="$parent.songSelection" ng-value="{{$index}}" />
+						{{item.songName}} by {{item.artistName}} <!-- {{item.songId}} -->
 					</label>
 				</div>
+
+ 				<div class="row">
+					<div class="form-group col-sm-4">
+						<label for="">Number of Recommended Songs</label>
+						<input type="text" class="form-control" id="input3" name="numRecSongs" placeholder="number of recommended songs" ng-model="numRecSongs">
+					</div>
+					<div class="form-group col-sm-4">
+						<label for="">Max Number of Songs by the Same Artist</label>
+						<input type="text" class="form-control" id="input4" name="numSameArtist" placeholder="number of songs by the same artist" ng-model="numSameArtist">
+					</div>
+					<div class="checkbox col-sm-4">
+					  <label><input type="checkbox" value="" id="useArtistRel" ng-model="userArtistRel">Use Artist Relationship</label>
+					</div>					
+					<legend> Optional </legend>
+					<div class="form-group col-sm-6">
+						<label for="">Enter your user name for personalized recommendations</label>
+						<input type="text" class="form-control" id="input5" name="userName" placeholder="user name" ng-model="userName">
+					</div>
+					<div class="form-group col-sm-6">
+						<label for="">Influence of similar users</label>
+						<input type="text" class="form-control" id="input6" name="simUserParam" placeholder="" ng-model="simUserParam">
+					</div>
+				</div><!-- /.row -->
+			
+				<button type="submit" class="btn btn-primary">Submit</button>
 			</form>
 
 			
+			<img src="66643-Animated-Burning-Guitar.gif" alt="guitar" ng-show="showGuitar" ng-cloak>
 			<div class="col-xs-12 results" ng-show="showResults" ng-cloak>
 			<hr />
-			<h2>Query Results: </h2>
+			<h2>Recommended Songs: </h2>
 				<ul class="list-group">
-					<li class="list-group-item" ng-repeat="row in results track by $index">{{row.string}}</li>
+					<li class="list-group-item" ng-repeat="row in recommendedSongs track by $index">{{row.songName}} by {{row.artistName}}, {{row.score}} </li>
 				</ul>
 			</div><!-- /.col-xs-12 results -->
 		</div><!-- /.container -->
